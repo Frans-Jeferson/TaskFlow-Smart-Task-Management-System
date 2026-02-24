@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Menentukan karakter encoding agar mendukung berbagai simbol & huruf -->
+  <meta charset="UTF-8">
+
+  <!-- Agar tampilan responsive di semua device (HP, tablet, desktop) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Judul halaman yang muncul di tab browser -->
+  <title>TaskFlow - Smart Task Management System</title>
+
+  <!-- Menghubungkan file CSS external -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <!-- Bagian atas aplikasi yang menampilkan nama aplikasi dan deskripsi -->
+  <header class="header">
+    <h1>TaskFlow</h1> <!-- Nama aplikasi -->
+    <p>Smart Task Management System</p> <!-- Tagline aplikasi -->
+  </header>
+
+  <main class="container">
+
+    <!-- ================= DASHBOARD SUMMARY ================= -->
+    <!-- Menampilkan ringkasan jumlah task -->
+    <section class="dashboard">
+
+      <!-- Total semua task -->
+      <div class="card">
+        <h3>Total Tasks</h3>
+        <p id="totalTasks">0</p> <!-- Nilai akan diubah oleh JavaScript -->
+      </div>
+
+      <!-- Jumlah task yang sudah selesai -->
+      <div class="card">
+        <h3>Completed</h3>
+        <p id="completedTasks">0</p>
+      </div>
+
+      <!-- Jumlah task yang masih pending -->
+      <div class="card">
+        <h3>Pending</h3>
+        <p id="pendingTasks">0</p>
+      </div>
+
+      <!-- Jumlah task yang melewati deadline -->
+      <div class="card">
+        <h3>Overdue</h3>
+        <p id="overdueTasks">0</p>
+      </div>
+
+    </section>
+
+    <!-- ================= PROGRESS BAR ================= -->
+    <!-- Menampilkan progress penyelesaian task dalam bentuk bar -->
+    <section class="progress-section">
+      <h2>Progress</h2>
+
+      <!-- Background progress bar -->
+      <div class="progress-bar">
+        <!-- Bagian progress yang akan berubah lebarnya sesuai persentase -->
+        <div id="progress"></div>
+      </div>
+
+      <!-- Menampilkan persentase progress -->
+      <span id="progressText">0%</span>
+    </section>
+
+    <!-- ================= FORM TAMBAH TASK ================= -->
+    <section class="task-form">
+      <h2>Add New Task</h2>
+
+      <!-- Input nama task -->
+      <div class="form-control">
+        <input type="text" id="taskInput" placeholder="Enter task name">
+      </div>
+
+      <!-- Dropdown untuk memilih prioritas -->
+      <div class="form-control">
+        <select id="priority">
+          <option value="">Select Priority</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+      </div>
+
+      <!-- Dropdown kategori task -->
+      <div class="form-control">
+        <select id="category">
+          <option value="">Select Category</option>
+          <option value="Development">Development</option>
+          <option value="Meeting">Meeting</option>
+          <option value="Bug Fixing">Bug Fixing</option>
+          <option value="Testing">Testing</option>
+        </select>
+      </div>
+
+      <!-- Dropdown assign task ke tim tertentu -->
+      <div class="form-control">
+        <select id="assignTo">
+          <option value="">Assign To</option>
+          <option value="Frontend Team">Frontend Team</option>
+          <option value="Backend Team">Backend Team</option>
+          <option value="UI/UX Team">UI/UX Team</option>
+          <option value="Data Analyst">Data Analyst</option>
+        </select>
+      </div>
+
+      <!-- Input deadline task -->
+      <div class="form-control">
+        <input type="date" id="deadline">
+      </div>
+
+      <!-- Tombol untuk menambahkan task -->
+      <button id="addTaskBtn">Add Task</button>
+    </section>
+
+    <!-- ================= FILTER & SEARCH ================= -->
+    <section class="filters">
+
+      <!-- Input untuk mencari task berdasarkan nama -->
+      <input type="text" id="searchTask" placeholder="Search task...">
+
+      <!-- Filter task berdasarkan status -->
+      <select id="filterStatus">
+        <option value="all">All Status</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+      </select>
+    </section>
+
+    <!-- ================= TASK LIST ================= -->
+    <!-- Tempat menampilkan daftar semua task -->
+    <section class="task-list">
+      <h2>Task List</h2>
+
+      <!-- List task akan di-generate oleh JavaScript -->
+      <ul id="taskList"></ul>
+    </section>
+
+  </main>
+
+  <!-- Menghubungkan file JavaScript -->
+  <script src="To_Do_List.js"></script>
+
+</body>
+</html>

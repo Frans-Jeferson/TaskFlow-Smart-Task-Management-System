@@ -1,0 +1,288 @@
+/* ===================== RESET & GLOBAL STYLE ===================== */
+
+/* Reset default margin & padding semua elemen agar konsisten di semua browser */
+* {
+  margin: 0;
+  padding: 0;
+
+  /* Agar padding & border tidak menambah ukuran elemen */
+  box-sizing: border-box;
+
+  /* Font utama aplikasi */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Background utama aplikasi */
+body {
+  background: #f4f6f9; /* warna abu terang untuk kesan clean dashboard */
+  color: #333; /* warna teks utama */
+}
+
+/* ===================== HEADER ===================== */
+
+/* Container header */
+.header {
+  background: #ffffff; /* warna putih */
+  padding: 20px;
+  text-align: center;
+
+  /* garis bawah tipis sebagai pemisah */
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Judul aplikasi */
+.header h1 {
+  color: #4f46e5; /* warna primary */
+}
+
+/* Deskripsi/tagline aplikasi */
+.header p {
+  color: #777;
+  font-size: 14px;
+}
+
+/* ===================== MAIN CONTAINER ===================== */
+
+/* Pembungkus semua konten agar tidak full layar */
+.container {
+  width: 90%;
+  max-width: 1200px; /* batas lebar maksimum */
+  margin: 30px auto; /* center horizontal */
+}
+
+/* ===================== DASHBOARD CARDS ===================== */
+
+/* Layout card menggunakan CSS Grid */
+.dashboard {
+  display: grid;
+
+  /* responsive auto-fit */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Card summary (Total task, completed, dll) */
+.card {
+  background: #fff;
+  padding: 20px;
+
+  border-radius: 14px;
+
+  /* soft shadow untuk efek modern dashboard */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+
+  transition: 0.3s;
+}
+
+/* Efek hover card */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Judul kecil di card */
+.card h3 {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Angka utama di card */
+.card p {
+  font-size: 28px;
+  font-weight: bold;
+  color: #4f46e5;
+}
+
+/* ===================== PROGRESS BAR ===================== */
+
+.progress-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 30px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Background progress */
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+/* Progress yang bergerak sesuai persentase task selesai */
+#progress {
+  height: 100%;
+  width: 0%;
+
+  /* gradient primary → secondary */
+  background: linear-gradient(to right, #4f46e5, #06b6d4);
+
+  transition: 0.4s;
+}
+
+/* Text persentase */
+#progressText {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===================== FORM INPUT TASK ===================== */
+
+.task-form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  margin-bottom: 30px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Judul form */
+.task-form h2 {
+  margin-bottom: 15px;
+}
+
+/* Jarak antar input */
+.form-control {
+  margin-bottom: 15px;
+}
+
+/* Style input & select */
+.task-form input,
+.task-form select {
+  width: 100%;
+  padding: 12px;
+
+  border-radius: 10px;
+  border: 1px solid #ddd;
+
+  outline: none;
+  transition: 0.3s;
+}
+
+/* Efek focus saat diklik */
+.task-form input:focus,
+.task-form select:focus {
+  border-color: #4f46e5;
+}
+
+/* Tombol tambah task */
+.task-form button {
+  width: 100%;
+  padding: 14px;
+
+  border: none;
+  background: #4f46e5;
+  color: #fff;
+
+  font-size: 16px;
+  border-radius: 10px;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover tombol */
+.task-form button:hover {
+  background: #4338ca;
+}
+
+/* ===================== FILTER & SEARCH ===================== */
+
+.filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* Input & select pada filter */
+.filters input,
+.filters select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+/* ===================== TASK LIST ===================== */
+
+.task-list {
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.task-list h2 {
+  margin-bottom: 15px;
+}
+
+/* Hilangkan bullet list */
+#taskList {
+  list-style: none;
+}
+
+/* Item task */
+#taskList li {
+  background: #f9fafb;
+  padding: 15px;
+
+  border-radius: 10px;
+  margin-bottom: 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: 0.3s;
+}
+
+/* Hover task */
+#taskList li:hover {
+  background: #eef2ff;
+}
+
+/* ===================== PRIORITY BADGE ===================== */
+
+/* Style dasar badge */
+.priority {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #fff;
+}
+
+/* High priority → merah */
+.high {
+  background: #ef4444;
+}
+
+/* Medium priority → kuning */
+.medium {
+  background: #f59e0b;
+}
+
+/* Low priority → hijau */
+.low {
+  background: #10b981;
+}
+
+/* ===================== RESPONSIVE DESIGN ===================== */
+
+/* Jika layar ≤ 768px (tablet & HP) */
+@media(max-width: 768px) {
+
+  /* Filter jadi vertikal */
+  .filters {
+    flex-direction: column;
+  }
+
+}
