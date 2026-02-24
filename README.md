@@ -84,7 +84,7 @@ This project demonstrates my ability to:
 **Frans Jeferson**
 
 - 🌐 LinkedIn: https://www.linkedin.com/in/frans-jeferson/
-- 💻 GitHub: https://github.com/username-kamu
+- 💻 GitHub: https://github.com/Frans-Jeferson
 
 ## 🚀 Future Improvements
 
